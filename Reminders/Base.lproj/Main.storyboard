@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="備忘錄" id="bB3-9l-3oa">
-                        <barButtonItem key="leftBarButtonItem" title="test" id="OJb-Jg-JJH">
+                        <barButtonItem key="leftBarButtonItem" title="計時1分鐘" id="OJb-Jg-JJH">
                             <connections>
                                 <action selector="didTaptest" destination="BYZ-38-t0r" id="QFR-rr-wxB"/>
                             </connections>

@@ -82,11 +82,11 @@ class ViewController: UIViewController {
     
     func scheduleTest(){
         let content = UNMutableNotificationContent()
-        content.title = "Hello World"
+        content.title = "時間到！"
         content.sound = .default
-        content.body = "My long body. My long body. My long body. My long body. My long body. My long body. "
+        content.body = "時光匆匆，一分鐘到了！"
         
-        let targetDate = Date().addingTimeInterval(5)
+        let targetDate = Date().addingTimeInterval(60)
         print(targetDate)
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
                                                                                                   from: targetDate),
@@ -128,6 +128,11 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        models.remove(at: indexPath.row)
+        table.deleteRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
